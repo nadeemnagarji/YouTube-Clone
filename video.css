@@ -1,0 +1,343 @@
+.main{
+    width: 100%;
+    /* background-color: red; */
+}
+.display{
+  margin-top: 7rem;
+    background-color: #181818;
+    display: flex;
+    width: 100%;
+    gap:2rem;
+
+}
+.video-section{
+    /* padding-top: 4rem; */
+    width: 60%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
+.video-section video{
+    padding-top: 2rem;
+    width: 80%;
+    height: 60vh;
+    align-self: flex-end;
+}
+
+.main-video-info{
+    width:80% ;
+    background-color: green;
+    align-self: flex-end;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 2rem 0rem 0.8rem 0rem;
+    background-color: #181818;
+}
+.main-video-info h3{
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #FFFFFF;
+
+}
+.likes-views{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.views-time{
+    width: 30%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #AAAAAA;
+    line-height: normal;
+}
+.like-share{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.like-share span{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+.transparent{
+   color: transparent;
+}
+.like-share img{
+    width: 2rem;
+    height: 2rem;
+    
+}
+
+/*///////////////////////////////////////////////////////*/
+.channel-description{
+    width:80% ;
+    border-top: 1px solid rgb(59, 59, 59);
+    /* background-color: green; */
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+.channel-info{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.subs{
+    padding: 1rem 2rem;
+    background-color: #CC0000;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* background-color: red; */
+    /* height: 5rem; */
+   
+}
+.channel-logo{
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    /* background-color: red; */
+    background-image: url('https://s3-alpha-sig.figma.com/img/6541/8096/4d2677d841c8815e0965b100cbb81ae1?Expires=1699833600&Signature=IiJZcIhD706~UOy0FsCMwfM~xbLPN5J2xskVMVgvAAmdauS2-FCj~VcQbVqsWfUOVk311BGLwPGeOrIP0iLX~DwryTtw~fHFE5MmxIzGM4IfPzTqrjwA4ZadAU2ppOogaYikXjl05gfkoL8~RIbNS5BAXuoKihRDnZc0ARazbJU2HTkbnuvDPUzpMiodwCmd7qhTFG6T7ei6zrV62KPC8R8zdjKqDT4JUyvmVv61ew-AwiszNdY5lzgNptW1EqV7AdQF8r3pcPe3FQxwjz-Oa2FNfZqUwNZYtg2nPoSCjgwKAUO5yxjsDHCY3KWv4eCrmsl0k-cjZv7F0-NemOpECw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background-size: cover;
+}
+
+.channel-name p:first-child{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.channel-name p:last-child{
+    font-size: 1.2rem;
+    color: #AAAAAA;
+    margin-top: 5px;
+}
+
+
+
+.description{
+    padding: 1.2rem 0rem 0rem 6.4rem;
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    font-weight:400;
+    padding-bottom: 1.6rem;
+    border-bottom:  1px solid rgb(59, 59, 59);
+}
+.description p:last-child{
+    margin-top: 1rem;
+;
+}
+
+
+
+/* COMMMENT SECTION*/
+.comment-info{
+    display: flex;
+    /* height: 5rem;
+    background-color: green; */
+    gap: 2rem;
+    padding: 2.4rem 0rem 1.2rem 0rem;
+}
+.comment-info p {
+ display: flex;
+ font-size: 1.6rem;
+ color: #FFFFFF;
+ /* background-color: green; */
+ 
+}
+.comment-info div{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: red; */
+    align-items: self-start;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+
+    width: 13%;
+}
+.comment-info div i{
+    width: 3rem;
+    height:3rem;
+    align-self: start;
+    color: white;
+}
+
+
+
+.comment-input{
+    display: flex;
+    padding: 1.4rem 0rem 3.2rem 0rem;
+    /* background-color: red; */
+    height: 10rem;
+    align-items: center;
+    gap: 2rem;
+  
+}
+.comment-input img{
+    width: 5rem;
+    height: 7rem;
+   border-radius: 50%;
+}
+.comment-user-logo{
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    /* background-color: red; */
+    background-image: url('https://s3-alpha-sig.figma.com/img/177f/160a/7952386bb2224fea86799bdf8f4a8d55?Expires=1699833600&Signature=eHdM5nfy9yMNANJy9DDv0v6cL1lDkL9jjtkReYA3Qs61YD4ItenxZklYWTKjAVGwqQz50oWHTnegvgU8Jy2MY4jqVyVVWe39Ewxoh5zCvyh8fkPWS1LLJrPFhEBUkdWiixtNELQg~6GMlmTyjDfh4WfPgmEMBRXy7uZmEPV1nE1Z1~sI-aZSTy3IkdpKNwxARh0ae7KLEwcBWkQSf9XKL2bnYBpUqxt7I~plHWIVITWUzHX7c8iNkky-tvVID3bw7XtBC9qRzdr9~YBDHIOZA5ZcbuhF1csY2CKwDTo3xzkG~G2FW6qodFmoyTQNL9hOrgJSDHoenkiY-JzjVTYBkA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background-size: cover;
+}
+.comment-input input{
+    border: none;
+    background-color: transparent;
+}
+.comment-input input:placeholder-shown{
+    font-size: 1.4rem;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+
+
+
+/**COMMENTTS*/
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    gap:1.6rem;
+}
+
+.comment{
+    display: flex;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-self: center;
+    gap: 2rem;
+}
+.Commentuser-image {
+width: 4rem;
+height: 4rem;
+background-image: url('https://s3-alpha-sig.figma.com/img/1dcf/b665/49d8f77f73ab8e5a3187e5e97a4d5b58?Expires=1699833600&Signature=TZAslJiCeg6LDSIOxwFc6tsFqHMo7-pw9OP78uNnpzStZEKom~7cHM8WRral9CtUXyhxt1UmCEcQeSxXzOytVIY7qPSO74Lp7p-g2rY69ndwp1p7wDSgC3rSEns6lDCNAh6cIzT5jASW3o3truheRWaQhC-YumjsviMuh7MnzEYR8PXDGLExTOIbKDdBvIOeYBdAEYTlpWtDD1ivepaUP63HG~RsbASZjFMJSv0m9EbzITfVpVb9Jog4A6mhcrzh1h8acbrxpeTkP3xomXw31O1Ln5ZYBiceW9nv29UMlRYemCrXoNmu-pq7~8J179tztVwN3-L4ahrMUeSYXeurDQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+background-size: cover;
+border-radius: 50%;
+
+}
+.user-comment{
+    /* background-color: green; */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+#username{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+#username span{
+    color: #AAAAAA;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+#comment-content{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.comment-reactions{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size:1.2rem;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+.comment-reactions i{
+    font-size: 2rem;
+    
+}
+/*////////////////////////////////////////////////////////////////////////*/
+.suggestions{
+    padding-top: 2rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* background-color: green; */
+}
+.video-container{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    background-color:#181818 ;
+    height: 10rem;
+    position: relative;
+    background-color: greeen;
+    justify-content: center;
+
+}
+.video-container .video{
+    height: 100%;
+    width: 50%;
+    /* background-color: red; */
+}
+.video-container .video img{
+    height: 100%;
+    width: 100%;
+}
+.video-info{
+    padding-left: 1rem;
+    height: 100%;
+    width: fit-content;
+    background-color:#181818 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    /* background-color: red; */
+
+}
+.video-info div{
+    height: 100%;
+}
+.duration{
+ position: absolute;
+ left: 44%;
+ top:75%;
+}
+#title{
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+    color:#FFFFFF;
+    width: 100%;
+}
+
+
+/*////////////////////////////////////////////////////////////////////*/
