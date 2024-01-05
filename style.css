@@ -22,6 +22,32 @@ body{
     width: 100%;
  
 }
+.loading-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid red;
+    border-top: 4px solid transparent;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0); /* Semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Add your loader styling here */
+}
 .navbar{
     width: 100%;
     padding: 1rem 2rem;
@@ -79,6 +105,7 @@ body{
     border-radius: 2px 0px 0px 2px;
     border: none;
     height: 100%;
+    color: white;
 }
 .input-section input::placeholder{
     padding-left: 1rem;
@@ -87,6 +114,7 @@ body{
    font-weight: 400;
     line-height: normal;
     font-size: 1.6rem;
+    
 }
 .input-section img{
     width: fit-content;
@@ -259,6 +287,7 @@ body{
  height: max-content;
 padding-top: 1rem;
 flex-wrap: no-wrap;
+cursor: pointer;
 /* background-color: red; */
 }
 

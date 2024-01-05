@@ -17,11 +17,13 @@
     display: flex;
     flex-direction: column;
 }
-.video-section video{
+.video-section #video{
+    
     padding-top: 2rem;
     width: 80%;
     height: 60vh;
     align-self: flex-end;
+
 }
 
 .main-video-info{
@@ -45,9 +47,10 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    /* background-color: green; */
 }
 .views-time{
-    width: 30%;
+    width:10%;
     /* background-color: red; */
     display: flex;
     align-items: center;
@@ -58,20 +61,27 @@
     line-height: normal;
 }
 .like-share{
-    width: 50%;
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color: red; */
+    gap: 2rem;
+
 }
 .like-share span{
     display: flex;
     align-items: center;
-    width: fit-content;
-    gap: 1rem;
+    justify-content: space-between;
     font-size: 1.4rem;
     font-weight: 700;
     color: #FFFFFF;
     text-transform: uppercase;
+    gap: 1rem;
+
+}
+.like-share span p{
+    margin-bottom: 0;
 }
 .transparent{
    color: transparent;
@@ -115,12 +125,14 @@
    
 }
 .channel-logo{
-    width: 4.8rem;
-    height: 4.8rem;
+    width:5rem;
+    height: 5rem;
     border-radius: 50%;
-    /* background-color: red; */
-    background-image: url('https://s3-alpha-sig.figma.com/img/6541/8096/4d2677d841c8815e0965b100cbb81ae1?Expires=1699833600&Signature=IiJZcIhD706~UOy0FsCMwfM~xbLPN5J2xskVMVgvAAmdauS2-FCj~VcQbVqsWfUOVk311BGLwPGeOrIP0iLX~DwryTtw~fHFE5MmxIzGM4IfPzTqrjwA4ZadAU2ppOogaYikXjl05gfkoL8~RIbNS5BAXuoKihRDnZc0ARazbJU2HTkbnuvDPUzpMiodwCmd7qhTFG6T7ei6zrV62KPC8R8zdjKqDT4JUyvmVv61ew-AwiszNdY5lzgNptW1EqV7AdQF8r3pcPe3FQxwjz-Oa2FNfZqUwNZYtg2nPoSCjgwKAUO5yxjsDHCY3KWv4eCrmsl0k-cjZv7F0-NemOpECw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
-    background-size: cover;
+    background-color: red;
+    
+}
+.channel-logo img{
+    width: 100%;
 }
 
 .channel-name p:first-child{
@@ -319,19 +331,23 @@ border-radius: 50%;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    /* background-color: red; */
+    /* background-color: green; */
 
 }
-.video-info div{
+.video-info .video-title{
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    /* background-color: red; */
 }
 .duration{
  position: absolute;
- left: 44%;
- top:75%;
+ left: 40%;
+ top:70%;
 }
 #title{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2rem;
@@ -339,5 +355,11 @@ border-radius: 50%;
     width: 100%;
 }
 
+.views-time{
+    font-size: 1rem;
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+}
 
 /*////////////////////////////////////////////////////////////////////*/

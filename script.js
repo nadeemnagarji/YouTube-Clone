@@ -1,5 +1,8 @@
 let base_url = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=sandeepmaheswari&key='
 let api_key = 'AIzaSyDHwyyi3A9fATTvu2lIV4XL6BvkvLqjPmM'
+let base_url2 = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q='
+
+let id=1;
 const videosContainer = document.getElementById('videos')
 
 const Storedata = [{
@@ -854,6 +857,7 @@ const Storedata = [{
 }]
 async function initialPageVideos(){
    try {
+    localStorage.clear()
        const response = await fetch(`${base_url}${api_key}`)
        const data = await response.json()
        console.log(data.items[0].snippet.channelTitle
@@ -871,25 +875,48 @@ async function initialPageVideos(){
    }
 }
 
-// function dataInsert(){
-// Storedata[0].items.map((item)=>{
-//   console.log(item)
-//   const video = htmlForVideoSection(item)
-//   videosContainer.appendChild(video)
-//   console.log(video);
-// })
-
-
-// }
-//dataInsert()
 initialPageVideos()
 
+/* the elow code will fetch videos according to search input  */
 
+let Input = document.getElementById("search-input")
+let searchBtn = document.getElementById("search")
+searchBtn.addEventListener("click",()=>{
+  console.log(Input.value);
+  fetchVideos(Input.value)
+})
 
+ async function fetchVideos(searchQuery){
+  try {
+    
+      let response = await fetch(`${base_url2}${searchQuery}&key=${api_key}`)
+      const data = await response.json()
+      console.log(data.items[0].snippet.channelTitle);
 
+      data.items.map((item)=>{
+       console.log(item);
+       Storedata.push(item)
+       let video = htmlForVideoSection(item)
+       videosContainer.appendChild(video)
+      
+      })
+      
+  } catch (error) {
+    console.log(error);
+  }
+ }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Simulate fetching data (replace this with your actual data fetching logic)
+//     setTimeout(function () {
+//         // Assuming your data is loaded; hide the loader
+//         document.getElementById('loader-wrapper').style.display = 'none';
+//     }, 2000); // Adjust the time as needed
+// });
 function htmlForVideoSection(video_data){
 
      let thumbnail = video_data.snippet.thumbnails.medium.url
+     let videoThumbnail = video_data.snippet.thumbnails.high.url
      let title =  video_data.snippet.title
      let titletoadd = title.slice(0,20)
      let channelName = video_data.snippet.channelTitle
@@ -899,10 +926,10 @@ function htmlForVideoSection(video_data){
   videoContainer.className = 'video-container';
 
   // Create video element
-  const videoElement = document.createElement('video');
+  const videoElement = document.createElement('img');
   videoElement.id = 'video-1';
-  videoElement.src = 'Assets/movie.mp4';
-  videoElement.autoplay = true;
+  videoElement.src = `${videoThumbnail}`
+  // videoElement.autoplay = true;
 
   // Create duration element
   const durationElement = document.createElement('div');
@@ -952,6 +979,13 @@ videoTitleContainer.appendChild(viewsTimeContainer)
   videoContainer.appendChild(durationElement);
   videoContainer.appendChild(videoInfoContainer);
 
+  videoContainer.addEventListener("click",()=>{
+    window.location.href = 'video.html';
+    id++
+    let video_Data = JSON.stringify(video_data)
+    localStorage.setItem(`video`,video_Data)
+    console.log(localStorage.getItem(video));
+  })
   // Append video container to the body
  return videoContainer
 
@@ -959,4 +993,21 @@ videoTitleContainer.appendChild(viewsTimeContainer)
 }
 
 
+
+
+
+
+
+
+// function dataInsert(){
+// Storedata[0].items.map((item)=>{
+//   console.log(item)
+//   const video = htmlForVideoSection(item)
+//   videosContainer.appendChild(video)
+//   console.log(video);
+// })
+
+
+// }
+//dataInsert()
 
