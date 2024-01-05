@@ -892,7 +892,7 @@ searchBtn.addEventListener("click",()=>{
       let response = await fetch(`${base_url2}${searchQuery}&key=${api_key}`)
       const data = await response.json()
       console.log(data.items[0].snippet.channelTitle);
-
+      videosContainer.innerHTML = ""
       data.items.map((item)=>{
        console.log(item);
        Storedata.push(item)
