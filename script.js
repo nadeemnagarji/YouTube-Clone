@@ -1,7 +1,7 @@
 let base_url = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=sandeepmaheswari&key='
 let api_key = 'AIzaSyDHwyyi3A9fATTvu2lIV4XL6BvkvLqjPmM'
 let base_url2 = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q='
-
+let main_base_rul =   'https://youtube.googleapis.com/youtube/v3/videos?chart=mostPopular&maxResults=25&key='
 let id=1;
 const videosContainer = document.getElementById('videos')
 
@@ -892,6 +892,8 @@ searchBtn.addEventListener("click",()=>{
       let response = await fetch(`${base_url2}${searchQuery}&key=${api_key}`)
       const data = await response.json()
       console.log(data.items[0].snippet.channelTitle);
+ 
+ 
       videosContainer.innerHTML = ""
       data.items.map((item)=>{
        console.log(item);
