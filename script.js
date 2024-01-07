@@ -1,3 +1,4 @@
+let BASE_URL = 'https://www.googleapis.com/youtube/v3'
 let base_url = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=sandeepmaheswari&key='
 let api_key = 'AIzaSyDHwyyi3A9fATTvu2lIV4XL6BvkvLqjPmM'
 let base_url2 = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q='
@@ -860,13 +861,15 @@ async function initialPageVideos(){
     localStorage.clear()
        const response = await fetch(`${base_url}${api_key}`)
        const data = await response.json()
-       console.log(data.items[0].snippet.channelTitle
-        );
+       const channel_thumbnail_url = await getChannelLogo(`${data.items[0].snippet.channelId}`)
+       // we get the channele thumbnail first 
+       console.log(data.items[0].snippet.channelTitle);
 
        data.items.map((item)=>{
         console.log(item);
         Storedata.push(item)
-        let video = htmlForVideoSection(item)
+        let video = htmlForVideoSection(item,channel_thumbnail_url)
+        
         videosContainer.appendChild(video)
        
        })
@@ -891,14 +894,16 @@ searchBtn.addEventListener("click",()=>{
     
       let response = await fetch(`${base_url2}${searchQuery}&key=${api_key}`)
       const data = await response.json()
-      console.log(data.items[0].snippet.channelTitle);
+      const channel_thumbnail_url = await getChannelLogo(`${data.items[0].snippet.channelId}`)
+      console.log(data.items[0].snippet);
  
  
       videosContainer.innerHTML = ""
       data.items.map((item)=>{
        console.log(item);
        Storedata.push(item)
-       let video = htmlForVideoSection(item)
+        
+       let video = htmlForVideoSection(item,channel_thumbnail_url)
        videosContainer.appendChild(video)
       
       })
@@ -915,7 +920,7 @@ searchBtn.addEventListener("click",()=>{
 //         document.getElementById('loader-wrapper').style.display = 'none';
 //     }, 2000); // Adjust the time as needed
 // });
-function htmlForVideoSection(video_data){
+function htmlForVideoSection(video_data,channel_thumbnail_url){
 
      let thumbnail = video_data.snippet.thumbnails.medium.url
      let videoThumbnail = video_data.snippet.thumbnails.high.url
@@ -946,7 +951,8 @@ function htmlForVideoSection(video_data){
   const channelLogo = document.createElement('div');
   channelLogo.className = 'channel-logo';
   const channelLogoImg = document.createElement('img');
-  channelLogoImg.src = `${thumbnail}`
+  
+  channelLogoImg.src = `${channel_thumbnail_url}`
   channelLogo.appendChild(channelLogoImg);
 
   // Create video title container
@@ -986,6 +992,7 @@ videoTitleContainer.appendChild(viewsTimeContainer)
     id++
     let video_Data = JSON.stringify(video_data)
     localStorage.setItem(`video`,video_Data)
+    localStorage.setItem("Thumbnail",c)
     console.log(localStorage.getItem(video));
   })
   // Append video container to the body
@@ -995,9 +1002,14 @@ videoTitleContainer.appendChild(viewsTimeContainer)
 }
 
 
+async function getChannelLogo(channelId){
+  // https://www.googleapis.com/youtube/v3/channels?key=AIzaSyBmOfUnRNYc22e04ZmK79uRbPb6388K9AE&part=snippet&id=UC8Wd_RVw8T1O1_IWEbICkIg
+  const response = await fetch(`${BASE_URL}/channels?key=${api_key}&part=snippet&id=${channelId}`);
+  const data = await response.json();
+   return data.items[0].snippet.thumbnails.default.url;
+}
 
-
-
+getChannelLogo('UCBqFKDipsnzvJdt6UT0lMIg')
 
 
 
